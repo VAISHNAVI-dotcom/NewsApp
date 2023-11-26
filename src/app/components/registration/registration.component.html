@@ -1,0 +1,124 @@
+<div class="head">
+  <h1>Welcome to HotNews</h1>
+</div>
+<div class="toggle" style="    display: flex;
+justify-content: end;
+width: 95%;
+margin-top: 1%;">
+  <app-toogle></app-toogle>
+</div>
+<div class="login">
+  <div class="svg">
+    <img src="assets/reg_svg.svg" alt />
+  </div>
+  <div class="login_form">
+    <h1>Sign Up</h1>
+    <form [formGroup]="registrationForm" (submit)="onSubmit()">
+      <div class="reg_inpt">
+        <div class="inpLabel">
+          <label for="firstName">Enter your first name</label>
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="First name*" />
+          <div class="validation" *ngIf="isFieldInvalid('firstName')">
+            Please enter your first name !
+          </div>
+        </div>
+        <div class="inpLabel">
+          <label for="lastName">Enter your last name</label>
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Last name*" />
+          <div class="validation" *ngIf="isFieldInvalid('lastName')">
+            Please enter your last name !
+          </div>
+        </div>
+      </div>
+      <div class="reg_inpt">
+        <div class="inpLabel">
+          <label for="age">Enter your age</label>
+          <input
+            type="text"
+            id="age"
+            formControlName="age"
+            placeholder="Age*" />
+          <div class="validation" *ngIf="isFieldInvalid('age')">
+            Please enter your age !
+          </div>
+        </div>
+        <div class="inpLabel">
+          <label for="contactNumber">Enter your contact number </label>
+          <input
+            type="text"
+            id="contactNumber"
+            formControlName="contactNumber"
+            placeholder="Contact Number*" />
+          <div class="validation" *ngIf="isFieldInvalid('contactNumber')">
+            Please enter your contact number !
+          </div>
+        </div>
+      </div>
+      <div class="reg_inpt">
+        <div class="inpLabel inpLabelEmail">
+          <label for="email">Enter Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Email*" />
+          <div class="validation" *ngIf="isFieldInvalid('email')">
+            <ng-container *ngIf="isEmailExists()">
+              Email ID already exists. Please enter a different email.
+            </ng-container>
+            <ng-container *ngIf="!isEmailExists() && isFieldInvalid('email')">
+              Please enter your email!
+            </ng-container>
+          </div>
+        </div>
+        <!-- <div class="inpLabel">
+          <label for="">Select country</label>
+          <select id="country" formControlName="country">
+            <option value="Select country" selected>Select country</option>
+          </select>
+        </div> -->
+      </div>
+      <div class="reg_inpt">
+        <div class="inpLabel">
+          <label for="password">Enter password</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            placeholder="Password*" />
+          <div class="validation" *ngIf="isFieldInvalid('password')">
+            Please enter your password !
+          </div>
+
+          <div *ngIf="isFieldInvalid('password')" [ngStyle]="{ 'color': 'red', 'font-size':'11px' }">
+            {{ getErrorMessage() }}
+          </div>
+        </div>
+        <div class="inpLabel">
+          <label for="confirmPassword">Re-enter password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            placeholder="Confirm password*" />
+          <div class="validation" *ngIf="isFieldInvalid('confirmPassword')">
+            Please enter your confirm password !
+          </div>
+        </div>
+      </div>
+      <label id="label" class="check"></label>
+      <button type="submit" [disabled]="registrationForm.invalid">
+        Sign Up
+      </button>
+    </form>
+    <p>Already have an account? <a routerLink="/login">Login here</a></p>
+  </div>
+</div>

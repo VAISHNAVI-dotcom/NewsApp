@@ -1,0 +1,67 @@
+<!-- share-popup.component.html -->
+<div class="share-popup">
+
+    <div class="social-icons">
+        <button (click)="copyLink()"><mat-icon>file_copy</mat-icon>
+        </button>
+        <div class="social">
+
+            <a href="whatsapp://send?text={{ articleUrl }}" target="_blank"><i
+                    class="fa fa-whatsapp"></i></a>
+
+        </div>
+        <div class="social">
+
+            <a
+                href="https://www.facebook.com/sharer/sharer.php?u={{ articleUrl }}"
+                target="_blank"> <i class="fa fa-facebook"></i> </a>
+        </div>
+        <div class="social">
+
+            <a href="https://twitter.com/intent/tweet?url={{ articleUrl }}"
+                target="_blank"><i class="fa fa-twitter"></i></a>
+        </div>
+        <div class="social">
+
+            <a href="https://plus.google.com/share?url={{ articleUrl }}"
+                target="_blank"><i class="fa fa-google"></i></a>
+        </div>
+        <div class="social">
+
+            <a href="https://www.linkedin.com/shareArticle?url={{ articleUrl }}"
+                target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="social">
+
+            <a href="https://www.youtube.com/share?url={{ articleUrl }}"
+                target="_blank"><i class="fa fa-youtube"></i></a>
+        </div>
+        <div class="social">
+
+            <a href="https://www.instagram.com/share?url={{ articleUrl }}"
+                target="_blank"><i class="fa fa-instagram"></i></a>
+        </div>
+        <div class="social">
+
+            <a href="https://www.snapchat.com/share?url={{ articleUrl }}"
+                target="_blank"><i class="fa fa-snapchat-ghost"></i></a>
+        </div>
+        <div class="social">
+
+            <a href="https://web.skype.com/share?url={{ articleUrl }}"
+                target="_blank"><i class="fa fa-skype"></i></a>
+        </div>
+        <div class="social">
+
+            <a href="http://compose.mail.yahoo.com/?body={{ articleUrl }}"
+                target="_blank"><i class="fa fa-yahoo"></i></a>
+        </div>
+        <div class="social">
+
+            <a
+                href="https://www.reddit.com/submit?url={{ articleUrl }}&title=News"
+                target="_blank"><i class="fa fa-reddit"></i></a>
+        </div>
+    </div>
+
+</div>
